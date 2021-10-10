@@ -75,7 +75,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-──「 [Oda Nobunaga](https://telegra.ph/file/fa5805751e44608b1e162.png) 」──
+──「 [Yui Oregairu](https://telegra.ph/file/276ac2eeeb655c1957c1d.jpg) 」──
 
 *Yoshaa! {},*
 *I'm Anime themed group management bot*
@@ -90,7 +90,7 @@ I've some features for you :)
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/OdaRobot?startgroup=true"),
+            text="➕️ ᴀᴅᴅ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ➕️", url="t.me/YuiiDev_bot?startgroup=true"),
     ],
     [
         InlineKeyboardButton(text="✫ About ✫", callback_data="layla_"),
@@ -99,9 +99,9 @@ buttons = [
         ),
     ],
     [
-        InlineKeyboardButton(text="✯ Anime Group ✯", url=f"https://t.me/Grup_Anime_Chat"),
+        InlineKeyboardButton(text="✯ Support Group ✯", url=f"https://t.me/CyberSupportGroup"),
         InlineKeyboardButton(
-            text="✯ Channnel ✯", url=f"https://t.me/userlazyxbot"
+            text="✯ Channnel ✯", url=f"https://t.me/CyberMusicProject"
         ),
     ],
     [
@@ -111,16 +111,15 @@ buttons = [
 
 HELP_STRINGS = """
 *Main* commands available:
-*I'm Maintained By* @RxyMX 
-Bug Report to @OdaSupport[.](https://telegra.ph/file/f8b3ba005b0a685048ba2.jpg)
+*I'm Maintained By* @Badboyanim 
+Bug Report to @OdaSupport[.](https://telegra.ph/file/276ac2eeeb655c1957c1d.jpg)
  ➛ /help: PM's you this message.
  ➛ /help <module name>: PM's you info about that module.
  ➛ /settings:
    ❂ in PM: will send you your settings for all supported modules.
    ❂ in a group: will redirect you to pm, with all that chat's settings."""
 
-LAYLA_IMG = "https://telegra.ph/file/fa5805751e44608b1e162.png"
-ODA_IMG = "https://telegra.ph/file/ffe156089bcb0eb0bf239.jpg"
+YUI_IMG = "https://telegra.ph/file/276ac2eeeb655c1957c1d.jpg"
 
 DONATE_STRING = """I'm Free For Everyone"""
 
@@ -238,11 +237,14 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_photo(
-            ODA_IMG,
-            caption="I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
-                uptime),
+            YUI_IMG, caption= "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+                uptime
+            ),
             parse_mode=ParseMode.HTML,
-            )
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ", url="t.me/CyberSupportGroup")]]
+            ),
+        )
 
 
 def error_handler(update, context):
@@ -373,19 +375,19 @@ def layla_about_callback(update, context):
     query = update.callback_query
     if query.data == "layla_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *Oda Nobunaga*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *Yui Oregairu*, a powerful group management bot built to help you manage your group easily.
                  \n❍ I can restrict users.
                  \n❍ I can greet users with customizable welcome messages and even set a group's rules.
                  \n❍ I have an advanced anti-flood system.
                  \n❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
                  \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  \n❍ I check for admins' permissions before executing any command and more stuffs
-                 \n\n_Oda's licensed under the GNU General Public License v3.0_
-                 \n❍ UserLazy Projects @UserLazyXBot
-                 \n❍ Support Group @OdaSupport
-                 \n❍ Assistant @OdaHelper.
-                 \nHere is the [Author](https://t.me/RxyMX).
-                 \n\nIf you have any question about Oda, let us know at .""",
+                 \n\n_Yui's licensed under the GNU General Public License v3.0_
+                 \n❍ Cyber Projects @CyberMusicProject
+                 \n❍ Support Group @CyberSupportGroup
+                 \n❍ Assistant @JinakuShibagen.
+                 \nHere is the [Author](https://t.me/Badboyanim).
+                 \n\nIf you have any question about Yui, let us know at .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -411,8 +413,8 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Oda*
-                 \nHere is the [Author](https://github.com/UserLazy) .""",
+            text=""" Hi..🤗 I'm *Yui*
+                 \nHere is the [Author](https://github.com/aryazakaria01) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
