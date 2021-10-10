@@ -1,5 +1,5 @@
 # We're using Debian Slim Buster image
-FROM python:3.8.5-slim-buster
+FROM python:3.9.7-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
 
@@ -65,7 +65,7 @@ RUN apt update && apt upgrade -y && \
 RUN pip3 install --upgrade pip setuptools
 
 # Copy Python Requirements to /root/LaylaRobot
-RUN git clone -b master https://github.com/UserLazy/OdaRobot-Beta /root/LaylaRobot
+RUN git clone -b master https://github.com/aryazakaria01/OdaRobot-tester /root/LaylaRobot
 WORKDIR /root/LaylaRobot
 
 #Copy config file to /root/LaylaRobot/LaylaRobot
